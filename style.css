@@ -4,23 +4,8 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: 'Montserrat',
-    sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
-/* :root{ */
-    /* COLOURS */
-    /* --first-color: #5361FF;
-    --white-color: #FAFAFF;
-    --dark-color: #2A3B47;
-    --text-color: #697477; */
-   /* TYPOGRAPHY */
-    /* --body-font: 'Montserrat', sans-serif;
-    --big-font-size: 6.25rem;
-    --h2-font-size: 1.25rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem; */
-/* } */
-/*START header style starts here  */
 .header{
     position: fixed;
     top: 0; 
@@ -31,7 +16,6 @@ font-family: 'Montserrat',
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    /* background: rgb(19, 19, 68); */
 }
 .logo {
     font-size: large;
@@ -41,18 +25,39 @@ font-family: 'Montserrat',
     pointer-events: none;
     opacity: 0;
     animation: slideTop 1s ease forwards;
+    margin-left: 110px;
 }
 .navbar a {
-   display: inline-block;
-   font-size: 18px; 
-   color: white;
-   text-decoration: none;
-   font-weight: 500;
-   margin: 35px;
-   opacity: 0;
-   animation: slideTop .5s ease forwards;
-   animation-delay: calc(.2s * var(--i))
-}
+    display: inline-block;
+    font-size: 18px; 
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+    position: relative; /* Add relative positioning */
+ }
+ 
+ .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust the position of the line */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #00ff00, #0000ff); /* Replace with your gradient colors */
+    transform: scaleX(0); /* Initially hide the line */
+    transition: transform 0.3s ease;
+ }
+ 
+ .navbar a:hover::after,
+ .navbar a:focus::after {
+    transform: scaleX(1); /* Show the line on hover or focus */
+ }
+ 
 /*ENDS header style starts here  */
 /* START home section style start */
 .home{
@@ -112,7 +117,7 @@ font-family: 'Montserrat',
     top: 0;
     left: 0;
     inset: 0;
-    background: linear-gradient(45deg, #f06, #3cf, #f06);
+    background: linear-gradient(45deg, green, blue, green);
     background-size: 200%;
     background-position: 0 0;
     z-index: -1;
@@ -129,7 +134,7 @@ font-family: 'Montserrat',
     top: 0;
     left: 0;
     inset: 0;
-    background: linear-gradient(45deg, #f06, #3cf, #f06);
+    background: linear-gradient(to right, #00ff00, #0000ff,  #00ff00);
     background-size: 200%;
     background-position: 0 0;
     z-index: -1;
@@ -152,7 +157,7 @@ font-family: 'Montserrat',
     align-items: center;
     width: 40px;
     height: 40px;
-    background:  linear-gradient(45deg, #f06, #3cf );
+    background: linear-gradient(to right, #00ff00, #0000ff);
     border-radius: 50%;
     font-size: 20px;
     color: #fff;
@@ -180,7 +185,7 @@ font-family: 'Montserrat',
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #f06, #3cf);
+    background: linear-gradient(to right, #00ff00, #0000ff);
     border-radius: 50%;
     z-index: -1;
     transition: .5s ease;
@@ -233,7 +238,7 @@ font-family: 'Montserrat',
     position: absolute;
     width: 400px;
     height: 400px;
-    background: linear-gradient(45deg, #f06, #3cf) ;
+    background: linear-gradient(to right, #00ff00, #0000ff);
     border-radius: 50%;
     animation: circleRotate 5s linear infinite;
 }
