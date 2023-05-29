@@ -6,12 +6,17 @@ padding: 0;
 box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
 }
+body {
+    background: #9191e9;
+}
 .header{
     position: fixed;
     top: 0; 
     left: 0;
     width: 100%;
+    height: 70px;
     padding: 20px 10%;
+    background: #10143f;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,6 +69,7 @@ font-family: 'Montserrat', sans-serif;
  padding: 70px 10% 0; 
  background: #10143f;
  color: white;
+
 }
 
 .home-content h1{
@@ -332,3 +338,107 @@ font-family: 'Montserrat', sans-serif;
         transform: rotate(360deg);
      } 
 }
+/*---------------------------------------- end home page */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+    margin-top: 0;
+  
+  }
+
+  .about-content {
+    text-align: center;
+  }
+  
+  .about-content h1 {
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+  }
+  
+  .about-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    
+    height: 2px;
+    background: linear-gradient(to right, #00ff00, #0000ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-content h1:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .about-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.5s;
+  }
+ 
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* ------------------certifications section */
+  #certification {
+    background: #10143f;
+  }
+#certification .section-title {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+ 
+}
+
+.certificate__container {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 10%;
+  justify-items: center;
+}
+
+.certificate__img img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Add transition property */
+}
+
+.certificate__img img:hover {
+  transform: scale(1.3); /* Increase the image size by 30% on hover */
+}
+
+  
+
+  
+  
+  
